@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vladdetailing.ro/sitemap.xml
+Host: www.vladdetailing.ro
