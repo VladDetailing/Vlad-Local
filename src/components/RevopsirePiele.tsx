@@ -1,7 +1,7 @@
 import { Palette, Shield, Armchair, CircleDashed, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const galleryImages = ['/Revopsire-piele/IMG_7015.PNG', '/Revopsire-piele/IMG_7016.PNG'];
+const galleryImages = ['/Revopsire-piele/IMG_7015.webp', '/Revopsire-piele/IMG_7016.webp'];
 const gallerySlots = [...galleryImages];
 
 export default function RevopsirePiele() {

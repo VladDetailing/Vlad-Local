@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:images && npm run build:knowledge && vite build",
-    "build:images": "node scripts/optimize-images.mjs",
+    "build": "npm run build:knowledge && vite build",
     "build:knowledge": "node scripts/generate-site-knowledge.mjs",
     "lint": "eslint .",
     "preview": "vite preview",

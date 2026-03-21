@@ -18,6 +18,7 @@ type BeforeAfterSliderProps = {
   afterTranslateY?: number;
   beforeRotation?: number;
   afterRotation?: number;
+  disableOptimized?: boolean;
 };
 
 export default function BeforeAfterSlider({
@@ -36,7 +37,8 @@ export default function BeforeAfterSlider({
   afterTranslateX = 0,
   afterTranslateY = 0,
   beforeRotation = 0,
-  afterRotation = 0
+  afterRotation = 0,
+  disableOptimized = false
 }: BeforeAfterSliderProps) {
   const inputId = useId();
   const [percent, setPercent] = useState(initialPercent);
@@ -147,6 +149,7 @@ export default function BeforeAfterSlider({
         decoding="async"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         draggable={false}
+        disableOptimized={disableOptimized}
       />
 
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${clipRight} 0 0)` }}>
@@ -162,6 +165,7 @@ export default function BeforeAfterSlider({
           decoding="async"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           draggable={false}
+          disableOptimized={disableOptimized}
         />
       </div>
 

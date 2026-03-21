@@ -13,12 +13,12 @@ export type DetailingPackage = {
 };
 
 export const detailingInteriorExampleImages = [
-  '/Images/Fotografii-interior/IMG_6922.PNG',
-  '/Images/Fotografii-interior/IMG_6925.PNG',
-  '/Images/Fotografii-interior/IMG_6928.PNG',
-  '/Images/Fotografii-interior/IMG_6929.PNG',
-  '/Images/Fotografii-interior/IMG_6930.PNG',
-  '/Images/Fotografii-interior/IMG_6931.PNG'
+  '/Images/Fotografii-interior/IMG_6922.webp',
+  '/Images/Fotografii-interior/IMG_6925.webp',
+  '/Images/Fotografii-interior/IMG_6928.webp',
+  '/Images/Fotografii-interior/IMG_6929.webp',
+  '/Images/Fotografii-interior/IMG_6930.webp',
+  '/Images/Fotografii-interior/IMG_6931.webp'
 ];
 
 export const detailingInteriorPackages: DetailingPackage[] = [
@@ -89,4 +89,3 @@ export const detailingInteriorPackages: DetailingPackage[] = [
     premium: true
   }
 ];
-

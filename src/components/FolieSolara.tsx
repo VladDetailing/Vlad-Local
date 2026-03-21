@@ -5,17 +5,17 @@ import OptimizedImg from './OptimizedImg';
 
 // Aici vei putea adăuga imaginile tale ulterior
 const folieImages: string[] = [
-  '/Images/folie-solara-geamuri/IMG_6988.PNG',
-  '/Images/folie-solara-geamuri/IMG_6978.PNG',
-  '/Images/folie-solara-geamuri/IMG_6979.PNG',
-  '/Images/folie-solara-geamuri/IMG_6980.PNG',
-  '/Images/folie-solara-geamuri/IMG_6981.PNG',
-  '/Images/folie-solara-geamuri/IMG_6982.PNG',
-  '/Images/folie-solara-geamuri/IMG_6984.PNG',
-  '/Images/folie-solara-geamuri/IMG_6985.PNG',
-  '/Images/folie-solara-geamuri/IMG_6986.PNG',
-  '/Images/folie-solara-geamuri/IMG_6987.PNG',
-  '/Images/folie-solara-geamuri/IMG_6977.PNG',
+  '/Images/folie-solara-geamuri/IMG_6988.webp',
+  '/Images/folie-solara-geamuri/IMG_6978.webp',
+  '/Images/folie-solara-geamuri/IMG_6979.webp',
+  '/Images/folie-solara-geamuri/IMG_6980.webp',
+  '/Images/folie-solara-geamuri/IMG_6981.webp',
+  '/Images/folie-solara-geamuri/IMG_6982.webp',
+  '/Images/folie-solara-geamuri/IMG_6984.webp',
+  '/Images/folie-solara-geamuri/IMG_6985.webp',
+  '/Images/folie-solara-geamuri/IMG_6986.webp',
+  '/Images/folie-solara-geamuri/IMG_6987.webp',
+  '/Images/folie-solara-geamuri/IMG_6977.webp',
 ];
 
 export default function FolieSolara() {

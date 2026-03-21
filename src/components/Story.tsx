@@ -41,11 +41,13 @@ export default function Story() {
             className="w-full h-full object-cover opacity-80"
             muted
             playsInline
+            autoPlay
             loop
-            preload="none"
-            poster="/Images/LOGO.PNG"
-            src="/Videos/povestea-noastra.mp4"
+            preload="metadata"
+            poster="/Images/LOGO.webp"
           >
+            <source src="/Videos/povestea-noastra-2.mp4?v=1" type="video/mp4" />
+            <source src="/Videos/povestea-noastra.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-gradient-to-l from-black via-black/20 to-transparent w-full" />
@@ -81,11 +83,12 @@ export default function Story() {
                 className="w-full h-full object-cover"
                 muted
                 playsInline
-                loop
                 autoPlay
-                preload="none"
-                src="/Videos/povestea-noastra.mp4"
+                loop
+                preload="metadata"
               >
+                <source src="/Videos/povestea-noastra-2.mp4?v=1" type="video/mp4" />
+                <source src="/Videos/povestea-noastra.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

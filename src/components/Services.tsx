@@ -95,8 +95,8 @@ export default function Services() {
               >
                 {i === 1 ? (
                   <BeforeAfterSlider
-                    beforeSrc="/Images/before-after/01-after.png"
-                    afterSrc="/Images/before-after/01-before.png"
+                    beforeSrc="/Images/before-after/01-after.webp"
+                    afterSrc="/Images/before-after/01-before.webp"
                     beforeAlt="Înainte - interior"
                     afterAlt="După - interior"
                     initialPercent={55}
@@ -109,8 +109,8 @@ export default function Services() {
                   />
                 ) : i === 2 ? (
                   <BeforeAfterSlider
-                    beforeSrc="/Images/before-after/02-after.png"
-                    afterSrc="/Images/before-after/02-before.png"
+                    beforeSrc="/Images/before-after/02-after.webp"
+                    afterSrc="/Images/before-after/02-before.webp"
                     beforeAlt="Înainte - exterior"
                     afterAlt="După - exterior"
                     initialPercent={50}
@@ -122,8 +122,9 @@ export default function Services() {
                   />
                 ) : i === 3 ? (
                   <BeforeAfterSlider
-                    beforeSrc="/Images/before-after/03-before.png?v=5"
-                    afterSrc="/Images/before-after/03-after.png?v=5"
+                    beforeSrc="/Images/before-after/03-before.webp?v=1001"
+                    afterSrc="/Images/before-after/03-after.webp?v=1001"
+                    disableOptimized
                     beforeAlt="Înainte - jante"
                     afterAlt="După - jante"
                     initialPercent={50}

@@ -4,19 +4,19 @@ import OptimizedImg from './OptimizedImg';
 import { useState } from 'react';
 
 const colantareImages: string[] = [
-  '/Images/colantari/IMG_5988.png',
-  '/Images/colantari/IMG_5991.png',
-  '/Images/colantari/IMG_6014.png',
-  '/Images/colantari/IMG_6018.png',
-  '/Images/colantari/IMG_6031.png',
+  '/Images/colantari/IMG_5988.webp',
+  '/Images/colantari/IMG_5991.webp',
+  '/Images/colantari/IMG_6014.webp',
+  '/Images/colantari/IMG_6018.webp',
+  '/Images/colantari/IMG_6031.webp',
 ];
 
 const ppfImages: string[] = [
-  '/Images/ppf/IMG_6697.png',
-  '/Images/ppf/IMG_5250.png',
-  '/Images/ppf/IMG_6699.png',
-  '/Images/ppf/IMG_5245.png',
-  '/Images/ppf/IMG_6696.png',
+  '/Images/ppf/IMG_6697.webp',
+  '/Images/ppf/IMG_5250.webp',
+  '/Images/ppf/IMG_6699.webp',
+  '/Images/ppf/IMG_5245.webp',
+  '/Images/ppf/IMG_6696.webp',
 ];
 
 export default function WrappingPpf() {

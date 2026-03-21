@@ -13,14 +13,14 @@ export type DetailingPackage = {
 };
 
 export const detailingExteriorExampleImages: string[] = [
-  '/Polish/IMG_7122.PNG',
-  '/Polish/IMG_7119.PNG',
-  '/Polish/IMG_7121.PNG',
-  '/Polish/IMG_7117.PNG',
-  '/Polish/IMG_7123.PNG',
-  '/Polish/IMG_7118.PNG',
-  '/Polish/IMG_7120.PNG',
-  '/Polish/IMG_7116.PNG'
+  '/Polish/IMG_7122.webp',
+  '/Polish/IMG_7119.webp',
+  '/Polish/IMG_7121.webp',
+  '/Polish/IMG_7117.webp',
+  '/Polish/IMG_7123.webp',
+  '/Polish/IMG_7118.webp',
+  '/Polish/IMG_7120.webp',
+  '/Polish/IMG_7116.webp'
 ];
 
 export const detailingExteriorPackages: DetailingPackage[] = [

@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @media (max-width: 480px) {
+    html {
+      font-size: clamp(14px, 3.8vw, 16px);
+    }
+  }
+  @media (max-width: 360px) {
+    html {
+      font-size: clamp(13px, 4vw, 15px);
+    }
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}

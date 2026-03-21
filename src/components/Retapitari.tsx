@@ -2,12 +2,12 @@ import { BadgeCheck, CircleDashed, Shield, Sofa, Truck, Wrench } from 'lucide-re
 import { motion } from 'framer-motion';
 
 const workshopImages: string[] = [
-  '/Retapitari/IMG_7020.PNG',
-  '/Retapitari/IMG_7022.PNG',
-  '/Retapitari/IMG_7024.PNG',
-  '/Retapitari/IMG_7026.PNG',
-  '/Retapitari/IMG_7028.PNG',
-  '/Retapitari/IMG_7029.PNG'
+  '/Retapitari/IMG_7020.webp',
+  '/Retapitari/IMG_7022.webp',
+  '/Retapitari/IMG_7024.webp',
+  '/Retapitari/IMG_7026.webp',
+  '/Retapitari/IMG_7028.webp',
+  '/Retapitari/IMG_7029.webp'
 ];
 
 export default function Retapitari() {
@@ -54,11 +54,7 @@ export default function Retapitari() {
                       key={src}
                       className="relative aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
                     >
-                      <picture>
-                        <source type="image/avif" srcSet={`/optimized${src.replace(/\.[^/.]+$/, '')}-w480.avif 480w, /optimized${src.replace(/\.[^/.]+$/, '')}-w768.avif 768w, /optimized${src.replace(/\.[^/.]+$/, '')}-w1080.avif 1080w, /optimized${src.replace(/\.[^/.]+$/, '')}-w1440.avif 1440w`} sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw" />
-                        <source type="image/webp" srcSet={`/optimized${src.replace(/\.[^/.]+$/, '')}-w480.webp 480w, /optimized${src.replace(/\.[^/.]+$/, '')}-w768.webp 768w, /optimized${src.replace(/\.[^/.]+$/, '')}-w1080.webp 1080w, /optimized${src.replace(/\.[^/.]+$/, '')}-w1440.webp 1440w`} sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw" />
-                        <img src={src} alt={`Lucrare retapițare ${index + 1}`} className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
-                      </picture>
+                      <img src={src} alt={`Lucrare retapițare ${index + 1}`} className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
                     </div>
                   ) : (
                     <div

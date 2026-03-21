@@ -7,12 +7,12 @@ type SocialDockProps = {
 
 function SocialDockContent({ inline = false }: SocialDockProps): React.ReactElement {
   const containerClassName = inline
-    ? 'flex items-center justify-end gap-2 translate-x-3 md:translate-x-5'
+    ? 'flex items-center justify-end gap-2'
     : 'fixed top-6 right-6 z-[1000] flex items-center gap-2';
   const buttonClassName = inline
-    ? 'bg-black/70 hover:bg-black text-white p-3 rounded-full shadow-xl border border-blue-500/30 transition-transform hover:scale-105'
+    ? 'bg-black/70 hover:bg-black text-white p-2 md:p-3 rounded-full shadow-xl border border-blue-500/30 transition-transform hover:scale-105'
     : 'bg-black/70 hover:bg-black text-white p-3 rounded-full shadow-xl border border-blue-500/30 transition-transform hover:scale-105';
-  const iconClassName = inline ? 'w-7 h-7' : 'w-6 h-6';
+  const iconClassName = inline ? 'w-5 h-5 md:w-7 md:h-7' : 'w-6 h-6';
 
   return (
     <div className={containerClassName}>

@@ -101,22 +101,14 @@ export default function PolishFaruri() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <div className="aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700 relative group">
-                  <picture>
-                    <source type="image/avif" srcSet="/optimized/Images/Polish-faruri/IMG_6990-w480.avif 480w, /optimized/Images/Polish-faruri/IMG_6990-w768.avif 768w, /optimized/Images/Polish-faruri/IMG_6990-w1080.avif 1080w, /optimized/Images/Polish-faruri/IMG_6990-w1440.avif 1440w" sizes="(max-width: 640px) 100vw, 33vw" />
-                    <source type="image/webp" srcSet="/optimized/Images/Polish-faruri/IMG_6990-w480.webp 480w, /optimized/Images/Polish-faruri/IMG_6990-w768.webp 768w, /optimized/Images/Polish-faruri/IMG_6990-w1080.webp 1080w, /optimized/Images/Polish-faruri/IMG_6990-w1440.webp 1440w" sizes="(max-width: 640px) 100vw, 33vw" />
-                    <img src="/Images/Polish-faruri/IMG_6990.jpg" alt="Faruri matuite inainte de polish" className="w-full h-full object-cover" loading="lazy" decoding="async" />
-                  </picture>
+                  <img src="/Images/Polish-faruri/IMG_6990.webp" alt="Faruri matuite inainte de polish" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">ÎNAINTE</div>
                 </div>
               </div>
               
               <div className="space-y-2">
                 <div className="aspect-square bg-gray-800 rounded-xl overflow-hidden border border-blue-500/30 relative group shadow-lg shadow-blue-500/10">
-                  <picture>
-                    <source type="image/avif" srcSet="/optimized/Images/Polish-faruri/IMG_6991-w480.avif 480w, /optimized/Images/Polish-faruri/IMG_6991-w768.avif 768w, /optimized/Images/Polish-faruri/IMG_6991-w1080.avif 1080w, /optimized/Images/Polish-faruri/IMG_6991-w1440.avif 1440w" sizes="(max-width: 640px) 100vw, 33vw" />
-                    <source type="image/webp" srcSet="/optimized/Images/Polish-faruri/IMG_6991-w480.webp 480w, /optimized/Images/Polish-faruri/IMG_6991-w768.webp 768w, /optimized/Images/Polish-faruri/IMG_6991-w1080.webp 1080w, /optimized/Images/Polish-faruri/IMG_6991-w1440.webp 1440w" sizes="(max-width: 640px) 100vw, 33vw" />
-                    <img src="/Images/Polish-faruri/IMG_6991.jpg" alt="Faruri restaurate dupa polish" className="w-full h-full object-cover" loading="lazy" decoding="async" />
-                  </picture>
+                  <img src="/Images/Polish-faruri/IMG_6991.webp" alt="Faruri restaurate dupa polish" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   <div className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">DUPĂ</div>
                 </div>
               </div>

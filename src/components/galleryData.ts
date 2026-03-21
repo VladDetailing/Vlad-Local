@@ -15,227 +15,227 @@ export type GalleryImage = {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: '/Images/Fotografii-interior/IMG_6922.PNG',
+    src: '/Images/Fotografii-interior/IMG_6922.webp',
     alt: 'Detailing interior - rezultat 1',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/Fotografii-interior/IMG_6925.PNG',
+    src: '/Images/Fotografii-interior/IMG_6925.webp',
     alt: 'Detailing interior - rezultat 2',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/Fotografii-interior/IMG_6928.PNG',
+    src: '/Images/Fotografii-interior/IMG_6928.webp',
     alt: 'Detailing interior - rezultat 3',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/Fotografii-interior/IMG_6929.PNG',
+    src: '/Images/Fotografii-interior/IMG_6929.webp',
     alt: 'Detailing interior - rezultat 4',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/Fotografii-interior/IMG_6930.PNG',
+    src: '/Images/Fotografii-interior/IMG_6930.webp',
     alt: 'Detailing interior - rezultat 5',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/Fotografii-interior/IMG_6931.PNG',
+    src: '/Images/Fotografii-interior/IMG_6931.webp',
     alt: 'Detailing interior - rezultat 6',
     category: 'detailing-interior'
   },
   {
-    src: '/Images/ppf/IMG_5245.png',
+    src: '/Images/ppf/IMG_5245.webp',
     alt: 'PPF - lucrare 1',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/ppf/IMG_5250.png',
+    src: '/Images/ppf/IMG_5250.webp',
     alt: 'PPF - lucrare 2',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/ppf/IMG_6696.png',
+    src: '/Images/ppf/IMG_6696.webp',
     alt: 'PPF - lucrare 3',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/ppf/IMG_6697.png',
+    src: '/Images/ppf/IMG_6697.webp',
     alt: 'PPF - lucrare 4',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/ppf/IMG_6699.png',
+    src: '/Images/ppf/IMG_6699.webp',
     alt: 'PPF - lucrare 5',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/colantari/IMG_5988.png',
+    src: '/Images/colantari/IMG_5988.webp',
     alt: 'Wrapping - lucrare 1',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/colantari/IMG_5991.png',
+    src: '/Images/colantari/IMG_5991.webp',
     alt: 'Wrapping - lucrare 2',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/colantari/IMG_6014.png',
+    src: '/Images/colantari/IMG_6014.webp',
     alt: 'Wrapping - lucrare 3',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/colantari/IMG_6018.png',
+    src: '/Images/colantari/IMG_6018.webp',
     alt: 'Wrapping - lucrare 4',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/colantari/IMG_6031.png',
+    src: '/Images/colantari/IMG_6031.webp',
     alt: 'Wrapping - lucrare 5',
     category: 'wrapping-ppf'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6977.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6977.webp',
     alt: 'Folie solară - lucrare 1',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6978.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6978.webp',
     alt: 'Folie solară - lucrare 2',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6979.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6979.webp',
     alt: 'Folie solară - lucrare 3',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6980.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6980.webp',
     alt: 'Folie solară - lucrare 4',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6981.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6981.webp',
     alt: 'Folie solară - lucrare 5',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6982.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6982.webp',
     alt: 'Folie solară - lucrare 6',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6984.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6984.webp',
     alt: 'Folie solară - lucrare 7',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6985.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6985.webp',
     alt: 'Folie solară - lucrare 8',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6986.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6986.webp',
     alt: 'Folie solară - lucrare 9',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6987.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6987.webp',
     alt: 'Folie solară - lucrare 10',
     category: 'folie-solara'
   },
   {
-    src: '/Images/folie-solara-geamuri/IMG_6988.PNG',
+    src: '/Images/folie-solara-geamuri/IMG_6988.webp',
     alt: 'Folie solară - lucrare 11',
     category: 'folie-solara'
   },
   {
-    src: '/Images/Polish-faruri/IMG_6990.jpg',
+    src: '/Images/Polish-faruri/IMG_6990.webp',
     alt: 'Polish faruri - înainte',
     category: 'polish-faruri'
   },
   {
-    src: '/Images/Polish-faruri/IMG_6991.jpg',
+    src: '/Images/Polish-faruri/IMG_6991.webp',
     alt: 'Polish faruri - după',
     category: 'polish-faruri'
   },
   {
-    src: '/Revopsire-piele/IMG_7013.PNG',
+    src: '/Revopsire-piele/IMG_7013.webp',
     alt: 'Revopsire piele - lucrare 1',
     category: 'revopsire-piele'
   },
   {
-    src: '/Revopsire-piele/IMG_7014.PNG',
+    src: '/Revopsire-piele/IMG_7014.webp',
     alt: 'Revopsire piele - lucrare 2',
     category: 'revopsire-piele'
   },
   {
-    src: '/Revopsire-piele/IMG_7015.PNG',
+    src: '/Revopsire-piele/IMG_7015.webp',
     alt: 'Revopsire piele - lucrare 3',
     category: 'revopsire-piele'
   },
   {
-    src: '/Revopsire-piele/IMG_7016.PNG',
+    src: '/Revopsire-piele/IMG_7016.webp',
     alt: 'Revopsire piele - lucrare 4',
     category: 'revopsire-piele'
   },
   {
-    src: '/Retapitari/IMG_7020.PNG',
+    src: '/Retapitari/IMG_7020.webp',
     alt: 'Retapițări - lucrare 1',
     category: 'retapitari'
   },
   {
-    src: '/Retapitari/IMG_7022.PNG',
+    src: '/Retapitari/IMG_7022.webp',
     alt: 'Retapițări - lucrare 2',
     category: 'retapitari'
   },
   {
-    src: '/Retapitari/IMG_7024.PNG',
+    src: '/Retapitari/IMG_7024.webp',
     alt: 'Retapițări - lucrare 3',
     category: 'retapitari'
   },
   {
-    src: '/Retapitari/IMG_7026.PNG',
+    src: '/Retapitari/IMG_7026.webp',
     alt: 'Retapițări - lucrare 4',
     category: 'retapitari'
   },
   {
-    src: '/Retapitari/IMG_7028.PNG',
+    src: '/Retapitari/IMG_7028.webp',
     alt: 'Retapițări - lucrare 5',
     category: 'retapitari'
   },
   {
-    src: '/Retapitari/IMG_7029.PNG',
+    src: '/Retapitari/IMG_7029.webp',
     alt: 'Retapițări - lucrare 6',
     category: 'retapitari'
   },
   {
-    src: '/Images/before-after/01-before.png',
+    src: '/Images/before-after/01-before.webp',
     alt: 'Before/After - interior înainte',
     category: 'before-after'
   },
   {
-    src: '/Images/before-after/01-after.png',
+    src: '/Images/before-after/01-after.webp',
     alt: 'Before/After - interior după',
     category: 'before-after'
   },
   {
-    src: '/Images/before-after/02-before.png',
+    src: '/Images/before-after/02-before.webp',
     alt: 'Before/After - exterior înainte',
     category: 'before-after'
   },
   {
-    src: '/Images/before-after/02-after.png',
+    src: '/Images/before-after/02-after.webp',
     alt: 'Before/After - exterior după',
     category: 'before-after'
   },
   {
-    src: '/Images/before-after/03-before.png?v=5',
+    src: '/Images/before-after/03-before.webp',
     alt: 'Before/After - jante înainte',
     category: 'before-after'
   },
   {
-    src: '/Images/before-after/03-after.png?v=5',
+    src: '/Images/before-after/03-after.webp',
     alt: 'Before/After - jante după',
     category: 'before-after'
   }

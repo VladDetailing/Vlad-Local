@@ -18,6 +18,7 @@ import ContactPage from './components/ContactPage';
 import TermsConditionsPage from './components/TermsConditionsPage';
 import ChatbotWidget from './components/ChatbotWidget';
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 type PageKey =
   | 'acasa'
@@ -155,6 +156,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState<PageKey>(getPageFromHash);
   const [headerOpacity, setHeaderOpacity] = useState(0);
   const [isServicesSubmenuOpen, setIsServicesSubmenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const servicesRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -293,7 +296,7 @@ function App() {
       img.onload = () => process(img);
       img.onerror = onFail;
     };
-    tryLoad('/images/LOGO.PNG', () => {
+    tryLoad('/Images/LOGO.webp', () => {
       tryLoad('/Images/LOGO.PNG', () => {
         setLogoUrl(null);
       });
@@ -448,12 +451,24 @@ function App() {
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="h-24 flex items-center justify-between">
-            <div className="w-56 md:w-72">
+            <div className="flex items-center gap-2 md:gap-0 min-w-0">
+              <button
+                type="button"
+                aria-label="Deschide meniul"
+                className="md:hidden inline-flex items-center justify-center bg-black/70 hover:bg-black text-white px-2 py-1.5 rounded-full shadow-xl border border-blue-500/30 transition-transform hover:scale-[1.02]"
+                onClick={() => setMobileMenuOpen(true)}
+              >
+                <Menu className="w-6 h-6" />
+              </button>
               {logoUrl && (
-                <img src={logoUrl} alt="Vlad Detailing Logo" className="h-20 md:h-[5.5rem] w-auto object-contain" />
+                <img
+                  src={logoUrl}
+                  alt="Vlad Detailing Logo"
+                  className="h-14 md:h-[5.5rem] w-auto object-contain max-w-[42vw]"
+                />
               )}
             </div>
-            <nav>
+            <nav className="hidden md:block">
               <div className="max-w-full whitespace-nowrap px-1 no-scrollbar overflow-x-auto md:overflow-visible overflow-y-visible">
               <ul className="flex items-center justify-center gap-3 md:gap-7 lg:gap-10 text-[10px] md:text-sm font-semibold tracking-wide overflow-visible">
                 {menuItems.map((item) =>
@@ -520,10 +535,10 @@ function App() {
               </ul>
               </div>
             </nav>
-            <div className="w-56 md:w-72 flex items-center justify-end gap-3">
+            <div className="flex items-center justify-end gap-2 md:gap-3 flex-shrink-0">
               <a
                 href="tel:0771133128"
-                className="hidden md:inline-flex items-center justify-center bg-black/70 hover:bg-black text-white px-4 py-2 rounded-full shadow-xl border border-blue-500/30 font-semibold text-sm whitespace-nowrap transition-transform hover:scale-[1.02]"
+                className="inline-flex items-center justify-center bg-black/70 hover:bg-black text-white px-2 md:px-4 py-1.5 md:py-2 rounded-full shadow-xl border border-blue-500/30 font-semibold text-[10px] md:text-sm transition-transform hover:scale-[1.02] max-w-[36vw] md:max-w-none overflow-hidden whitespace-nowrap truncate"
               >
                 0771 133 128
               </a>
@@ -532,6 +547,92 @@ function App() {
           </div>
         </div>
       </header>
+      <div
+        className={`fixed inset-0 z-[130] bg-black/60 transition-opacity ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+      <aside
+        className={`fixed inset-y-0 left-0 z-[140] w-72 max-w-[80%] bg-black/95 backdrop-blur-md border-r border-white/10 transform transition-transform ${
+          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div className="h-24 px-4 flex items-center justify-between border-b border-white/10">
+          <div className="text-white font-bold tracking-wide">Meniu</div>
+          <button
+            type="button"
+            aria-label="Închide meniul"
+            className="inline-flex items-center justify-center p-2 rounded-lg border border-white/10 bg-white/10 text-white"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+        <nav className="p-3">
+          <ul className="space-y-1">
+            {menuItems.map((item) =>
+              item.key === 'servicii' ? (
+                <li key={item.key} className="mb-2">
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    aria-expanded={mobileServicesOpen}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm text-gray-200 uppercase tracking-wide hover:text-blue-300 hover:bg-white/5 transition-colors"
+                  >
+                    <span>SERVICII</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <ul
+                    className={`pl-1 space-y-1 overflow-hidden transition-all ${
+                      mobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    {serviceSubmenu.map((submenuItem) => (
+                      <li key={submenuItem.targetId}>
+                        <a
+                          href={`#${submenuItem.targetId}`}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setMobileServicesOpen(false);
+                          }}
+                          className="block px-3 py-2 rounded-md text-sm text-gray-200 hover:text-blue-300 hover:bg-white/5 transition-colors uppercase tracking-wide"
+                        >
+                          {submenuItem.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={item.key}>
+                  <a
+                    href={`#${item.key}`}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="block px-3 py-2 rounded-md text-sm text-gray-200 hover:text-blue-300 hover:bg-white/5 transition-colors uppercase tracking-wide"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              )
+            )}
+          </ul>
+          <div className="mt-4 px-3">
+            <a
+              href="tel:0771133128"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setMobileServicesOpen(false);
+              }}
+              className="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow border border-blue-500/30 font-semibold text-sm transition-colors"
+            >
+              0771 133 128
+            </a>
+          </div>
+        </nav>
+      </aside>
 
       {renderPage()}
       <ChatbotWidget />

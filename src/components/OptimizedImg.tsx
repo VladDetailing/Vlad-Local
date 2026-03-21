@@ -7,6 +7,7 @@ type Props = {
   sizes?: string;
   style?: React.CSSProperties;
   draggable?: boolean;
+  disableOptimized?: boolean;
 };
 
 function buildSets(src: string, widths: number[]) {
@@ -20,14 +21,24 @@ function buildSets(src: string, widths: number[]) {
 }
 
 import * as React from 'react';
+import { ASSET_OVERRIDES } from './assetOverrides';
 
-export default function OptimizedImg({ src, alt, className, loading = 'lazy', decoding = 'async', sizes, style, draggable }: Props) {
+export default function OptimizedImg({ src, alt, className, loading = 'lazy', decoding = 'async', sizes, style, draggable, disableOptimized }: Props) {
+  const baseSrc = src.split('?')[0];
+  const override = ASSET_OVERRIDES[src] ?? ASSET_OVERRIDES[baseSrc];
+  const effectiveSrc = override ?? src;
+  const isRemote = /^https?:\/\//i.test(effectiveSrc) || effectiveSrc.startsWith('//') || effectiveSrc.startsWith('data:');
+  const isWebpOrAvif = /\.(webp|avif)(\?|$)/i.test(effectiveSrc);
   const widths = [480, 768, 1080, 1440];
-  const { avif, webp } = buildSets(src, widths);
+  const { avif, webp } = isRemote ? { avif: '', webp: '' } : buildSets(effectiveSrc, widths);
   const defaultSizes = sizes ?? '(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 16vw';
   const [fallback, setFallback] = React.useState(false);
 
   React.useEffect(() => {
+    if (isRemote || disableOptimized || isWebpOrAvif) {
+      setFallback(true);
+      return;
+    }
     let cancelled = false;
     const i = new Image();
     // Probăm cea mai mică variantă webp; dacă lipsește, revenim la fallback clasic
@@ -43,17 +54,17 @@ export default function OptimizedImg({ src, alt, className, loading = 'lazy', de
     return () => {
       cancelled = true;
     };
-  }, [webp]);
+  }, [webp, isRemote, disableOptimized, isWebpOrAvif]);
 
   if (fallback) {
-    return <img src={src} alt={alt} className={className} loading={loading} decoding={decoding} style={style} draggable={draggable} />;
+    return <img src={effectiveSrc} alt={alt} className={className} loading={loading} decoding={decoding} style={style} draggable={draggable} />;
   }
 
   return (
     <picture>
       <source type="image/avif" srcSet={avif} sizes={defaultSizes} />
       <source type="image/webp" srcSet={webp} sizes={defaultSizes} />
-      <img src={src} alt={alt} className={className} loading={loading} decoding={decoding} style={style} draggable={draggable} />
+      <img src={effectiveSrc} alt={alt} className={className} loading={loading} decoding={decoding} style={style} draggable={draggable} />
     </picture>
   );
 }
