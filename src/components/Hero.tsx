@@ -3,7 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-950 text-white">
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3752167/pexels-photo-3752167.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3752167/pexels-photo-3752167.jpeg?auto=compress&cs=tinysrgb&w=960')] md:bg-[url('https://images.pexels.com/photos/3752167/pexels-photo-3752167.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20"></div>
 
       <div className="relative z-10 container mx-auto px-6 py-8">
         

@@ -180,16 +180,6 @@ export const galleryImages: GalleryImage[] = [
     category: 'revopsire-piele'
   },
   {
-    src: '/Revopsire-piele/Revopsire1.HEIC',
-    alt: 'Revopsire piele - lucrare 5',
-    category: 'revopsire-piele'
-  },
-  {
-    src: '/Revopsire-piele/Revopsire2.HEIC',
-    alt: 'Revopsire piele - lucrare 6',
-    category: 'revopsire-piele'
-  },
-  {
     src: '/Retapitari/IMG_7020.PNG',
     alt: 'Retapițări - lucrare 1',
     category: 'retapitari'
@@ -290,4 +280,3 @@ export const gallerySections: Array<{ key: GallerySectionKey; title: string; sub
     subtitle: 'Diferențe vizibile înainte și după.'
   }
 ];
-

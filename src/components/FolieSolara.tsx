@@ -1,6 +1,7 @@
 import { Check, Shield, Sun, Clock, FileText, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
+import OptimizedImg from './OptimizedImg';
 
 // Aici vei putea adăuga imaginile tale ulterior
 const folieImages: string[] = [
@@ -184,10 +185,13 @@ export default function FolieSolara() {
                     onClick={() => setSelectedImage(src)}
                     className="flex-shrink-0 w-64 h-64 bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group/item hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative snap-center"
                   >
-                    <img 
-                      src={src} 
-                      alt={`Lucrare folie auto ${index + 1}`} 
+                    <OptimizedImg
+                      src={src}
+                      alt={`Lucrare folie auto ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 640px) 70vw, 256px"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/20 transition-colors duration-300" />
                   </div>
@@ -267,6 +271,7 @@ export default function FolieSolara() {
             src={selectedImage} 
             alt="Preview" 
             className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            loading="eager"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

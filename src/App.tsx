@@ -17,7 +17,7 @@ import Retapitari from './components/Retapitari';
 import ContactPage from './components/ContactPage';
 import TermsConditionsPage from './components/TermsConditionsPage';
 import ChatbotWidget from './components/ChatbotWidget';
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 
 type PageKey =
   | 'acasa'
@@ -126,7 +126,6 @@ const pageMeta: Record<PageKey, { title: string; description: string }> = {
   }
 };
 
-let galleryPrefetched = false;
 
 const LazyGalleryPage = lazy(() => import('./components/GalleryPage'));
 
@@ -156,6 +155,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState<PageKey>(getPageFromHash);
   const [headerOpacity, setHeaderOpacity] = useState(0);
   const [isServicesSubmenuOpen, setIsServicesSubmenuOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const meta = pageMeta[currentPage] ?? pageMeta.acasa;
@@ -215,47 +215,7 @@ function App() {
     });
   }, [currentPage]);
 
-  useEffect(() => {
-    if (galleryPrefetched) return;
-    if (currentPage !== 'acasa' && currentPage !== 'despre-noi') return;
-    galleryPrefetched = true;
-
-    let canceled = false;
-    const preloaded: HTMLImageElement[] = [];
-
-    const preloadGalleryImages = async () => {
-      void import('./components/GalleryPage');
-      const mod = await import('./components/galleryData');
-      if (canceled) return;
-      const srcs: string[] = (mod as unknown as { galleryImageSrcs?: string[] }).galleryImageSrcs ?? [];
-      for (const src of srcs) {
-        const img = new Image();
-        img.decoding = 'async';
-        (img as unknown as { fetchPriority?: string }).fetchPriority = 'low';
-        img.src = src;
-        preloaded.push(img);
-      }
-    };
-
-    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number; cancelIdleCallback?: (id: number) => void };
-    if (w.requestIdleCallback) {
-      const id = w.requestIdleCallback(() => {
-        void preloadGalleryImages();
-      });
-      return () => {
-        canceled = true;
-        w.cancelIdleCallback?.(id);
-      };
-    }
-
-    const t = window.setTimeout(() => {
-      void preloadGalleryImages();
-    }, 0);
-    return () => {
-      canceled = true;
-      window.clearTimeout(t);
-    };
-  }, [currentPage]);
+  
 
   useEffect(() => {
     if (currentPage === 'evaluare') return;
@@ -461,11 +421,18 @@ function App() {
     );
   };
 
-  const handleServicesSubmenuBlur = (event: React.FocusEvent<HTMLLIElement>) => {
-    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-      setIsServicesSubmenuOpen(false);
-    }
-  };
+  useEffect(() => {
+    if (!isServicesSubmenuOpen) return;
+    const onDocClick = (e: MouseEvent) => {
+      const el = servicesRef.current;
+      if (!el) return;
+      if (!el.contains(e.target as Node)) {
+        setIsServicesSubmenuOpen(false);
+      }
+    };
+    document.addEventListener('click', onDocClick);
+    return () => document.removeEventListener('click', onDocClick);
+  }, [isServicesSubmenuOpen]);
 
   const effectiveHeaderOpacity = isServicesSubmenuOpen ? Math.max(headerOpacity, 0.9) : headerOpacity;
   const effectiveHeaderBlur = isServicesSubmenuOpen ? Math.max(headerOpacity * 8, 12) : headerOpacity * 8;
@@ -487,16 +454,17 @@ function App() {
               )}
             </div>
             <nav>
-              <ul className="flex items-center justify-center gap-3 md:gap-7 lg:gap-10 text-[10px] md:text-sm font-semibold tracking-wide">
+              <div className="max-w-full whitespace-nowrap px-1 no-scrollbar overflow-x-auto md:overflow-visible overflow-y-visible">
+              <ul className="flex items-center justify-center gap-3 md:gap-7 lg:gap-10 text-[10px] md:text-sm font-semibold tracking-wide overflow-visible">
                 {menuItems.map((item) =>
                   item.key === 'servicii' ? (
                     <li
                       key={item.key}
                       className="relative group"
+                      ref={servicesRef}
                       onMouseEnter={() => setIsServicesSubmenuOpen(true)}
                       onMouseLeave={() => setIsServicesSubmenuOpen(false)}
                       onFocus={() => setIsServicesSubmenuOpen(true)}
-                      onBlur={handleServicesSubmenuBlur}
                     >
                       <button
                         type="button"
@@ -504,6 +472,8 @@ function App() {
                           e.preventDefault();
                           setIsServicesSubmenuOpen(!isServicesSubmenuOpen);
                         }}
+                        aria-haspopup="true"
+                        aria-expanded={isServicesSubmenuOpen}
                         className={`inline-flex items-center gap-1.5 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] bg-transparent border-none p-0 cursor-pointer ${
                           currentPage === item.key ? 'text-blue-400' : 'text-white hover:text-blue-300'
                         }`}
@@ -512,11 +482,10 @@ function App() {
                         <span className="text-[9px] md:text-[11px] leading-none transition-transform group-hover:translate-y-[1px]">▼</span>
                       </button>
                       <div 
-                        className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-all duration-200 ${
-                          isServicesSubmenuOpen 
-                            ? 'opacity-100 visible translate-y-0' 
-                            : 'opacity-0 invisible -translate-y-2'
-                        }`}
+                        className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 z-[999] transition-all duration-200
+                          ${isServicesSubmenuOpen ? 'opacity-100 visible translate-y-0 pointer-events-auto' : 'opacity-0 invisible -translate-y-2 pointer-events-none'}
+                          group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto
+                        `}
                       >
                         <ul className="min-w-[260px] bg-black/90 backdrop-blur-md p-3 space-y-1 shadow-2xl text-center rounded-lg border border-white/10">
                           {serviceSubmenu.map((submenuItem) => (
@@ -549,6 +518,7 @@ function App() {
                   )
                 )}
               </ul>
+              </div>
             </nav>
             <div className="w-56 md:w-72 flex items-center justify-end gap-3">
               <a

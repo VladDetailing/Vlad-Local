@@ -1,5 +1,6 @@
 import { Check, Car, Truck, Clock, X } from 'lucide-react';
 import { useState } from 'react';
+import OptimizedImg from './OptimizedImg';
 import { detailingExteriorExampleImages as exampleImages, detailingExteriorPackages as packages } from './detailingExteriorData';
 
 export default function DetailingExterior() {
@@ -134,11 +135,13 @@ export default function DetailingExterior() {
                   onClick={() => setSelectedImage(src)}
                     className="flex-none w-40 sm:w-44 md:w-48 aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative"
                   >
-                    <img
+                    <OptimizedImg
                       src={src}
                       alt={`Exemplu lucrare exterior ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 640px) 45vw, 192px"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   </div>

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
+import OptimizedImg from './OptimizedImg';
 
 type BeforeAfterSliderProps = {
   beforeSrc: string;
@@ -134,7 +135,7 @@ export default function BeforeAfterSlider({
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
     >
-      <img
+      <OptimizedImg
         src={beforeSrc}
         alt={beforeAlt}
         className="absolute inset-0 h-full w-full object-cover"
@@ -143,11 +144,13 @@ export default function BeforeAfterSlider({
           transform: `scale(${beforeScale}) translate(${beforeTranslateX}px, ${beforeTranslateY}px) rotate(${beforeRotation}deg)`
         }}
         loading="lazy"
+        decoding="async"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         draggable={false}
       />
 
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${clipRight} 0 0)` }}>
-        <img
+        <OptimizedImg
           src={afterSrc}
           alt={afterAlt}
           className="absolute inset-0 h-full w-full object-cover"
@@ -156,6 +159,8 @@ export default function BeforeAfterSlider({
             transform: `scale(${afterScale}) translate(${afterTranslateX}px, ${afterTranslateY}px) rotate(${afterRotation}deg)`
           }}
           loading="lazy"
+          decoding="async"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           draggable={false}
         />
       </div>

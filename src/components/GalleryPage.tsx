@@ -1,6 +1,7 @@
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { galleryImages, gallerySections } from './galleryData';
+import OptimizedImg from './OptimizedImg';
 
 export default function GalleryPage() {
   const [activeSrc, setActiveSrc] = useState<string | null>(null);
@@ -56,27 +57,7 @@ export default function GalleryPage() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [activeSrc, setNext, setPrev]);
 
-  useEffect(() => {
-    const preloaded: HTMLImageElement[] = [];
-
-    const preloadAll = () => {
-      for (const img of normalizedImages) {
-        const el = new Image();
-        el.decoding = 'async';
-        el.src = img.src;
-        preloaded.push(el);
-      }
-    };
-
-    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number; cancelIdleCallback?: (id: number) => void };
-    if (w.requestIdleCallback) {
-      const id = w.requestIdleCallback(preloadAll);
-      return () => w.cancelIdleCallback?.(id);
-    }
-
-    const t = window.setTimeout(preloadAll, 0);
-    return () => window.clearTimeout(t);
-  }, [normalizedImages]);
+  // Eliminăm preîncărcarea tuturor imaginilor pentru a reduce consumul de date și timpii de încărcare
 
   return (
     <div className="min-h-screen bg-black text-white pt-32 pb-24">
@@ -121,12 +102,13 @@ export default function GalleryPage() {
                     className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden hover:border-blue-500/50 transition-colors relative"
                     aria-label={img.alt}
                   >
-                    <img
+                    <OptimizedImg
                       src={img.src}
                       alt={img.alt}
                       className="w-full h-full object-cover"
-                      loading="eager"
+                      loading="lazy"
                       decoding="async"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
                     />
                     <div className="absolute inset-0 bg-black/0 hover:bg-black/15 transition-colors" />
                   </button>

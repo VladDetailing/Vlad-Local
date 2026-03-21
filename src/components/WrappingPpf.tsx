@@ -1,5 +1,6 @@
 import { Check, Car, Truck, Shield, PaintBucket, Clock, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import OptimizedImg from './OptimizedImg';
 import { useState } from 'react';
 
 const colantareImages: string[] = [
@@ -256,10 +257,13 @@ export default function WrappingPpf() {
                       onClick={() => setSelectedImage(src)}
                       className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative"
                     >
-                      <img 
-                        src={src} 
-                        alt={`Lucrare colantare ${index + 1}`} 
+                      <OptimizedImg
+                        src={src}
+                        alt={`Lucrare colantare ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 640px) 45vw, 192px"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
@@ -285,10 +289,14 @@ export default function WrappingPpf() {
                       onClick={() => setSelectedImage(src)}
                       className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-green-500/50 transition-colors cursor-pointer overflow-hidden relative"
                     >
-                      <img 
-                        src={src} 
-                        alt={`Lucrare PPF ${index + 1}`} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      <OptimizedImg
+                        src={src}
+                        alt={`Lucrare PPF ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform durata
+tion-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 640px) 45vw, 192px"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
@@ -361,6 +369,7 @@ export default function WrappingPpf() {
             src={selectedImage} 
             alt="Preview" 
             className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            loading="eager"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

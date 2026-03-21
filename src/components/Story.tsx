@@ -42,6 +42,7 @@ export default function Story() {
             muted
             playsInline
             loop
+            preload="none"
             poster="/Images/LOGO.PNG"
             src="/Videos/povestea-noastra.mp4"
           >
@@ -82,6 +83,7 @@ export default function Story() {
                 playsInline
                 loop
                 autoPlay
+                preload="none"
                 src="/Videos/povestea-noastra.mp4"
               >
                 Your browser does not support the video tag.
