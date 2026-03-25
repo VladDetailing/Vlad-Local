@@ -250,12 +250,12 @@ export default function WrappingPpf() {
                 Colantări Auto
               </h3>
               {colantareImages.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <div className="flex md:grid md:grid-cols-5 overflow-x-auto md:overflow-visible flex-nowrap md:flex-none gap-3 md:gap-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory">
                   {colantareImages.map((src, index) => (
                     <div 
                       key={index}
                       onClick={() => setSelectedImage(src)}
-                      className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative"
+                      className="flex-none w-44 md:w-auto aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative snap-start"
                     >
                       <OptimizedImg
                         src={src}
@@ -263,7 +263,7 @@ export default function WrappingPpf() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         loading="lazy"
                         decoding="async"
-                        sizes="(max-width: 640px) 45vw, 192px"
+                        sizes="(max-width: 640px) 44vw, 192px"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
@@ -282,21 +282,20 @@ export default function WrappingPpf() {
                 Protecție PPF
               </h3>
               {ppfImages.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <div className="flex md:grid md:grid-cols-5 overflow-x-auto md:overflow-visible flex-nowrap md:flex-none gap-3 md:gap-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory">
                   {ppfImages.map((src, index) => (
                     <div 
                       key={index}
                       onClick={() => setSelectedImage(src)}
-                      className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-green-500/50 transition-colors cursor-pointer overflow-hidden relative"
+                      className="flex-none w-44 md:w-auto aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-green-500/50 transition-colors cursor-pointer overflow-hidden relative snap-start"
                     >
                       <OptimizedImg
                         src={src}
                         alt={`Lucrare PPF ${index + 1}`}
-                        className="w-full h-full object-cover transition-transform durata
-tion-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         loading="lazy"
                         decoding="async"
-                        sizes="(max-width: 640px) 45vw, 192px"
+                        sizes="(max-width: 640px) 44vw, 192px"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
@@ -340,13 +339,13 @@ tion-500 group-hover:scale-110"
         {/* SEO Keywords (Hidden visually but present in DOM structure if needed, or displayed discreetly) */}
         <div className="mt-24 pt-12 border-t border-gray-900">
           <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-700">
+          <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
             {[
               'Colantare auto Galați', 'Folie protecție PPF Galați', 'Înfoliere auto Galați',
               'Protecție vopsea auto', 'Colantare mașină', 'Folie protecție caroserie',
               'Detailing auto Galați', 'Folie PPF auto', 'Schimbare culoare mașină'
             ].map((tag, i) => (
-              <span key={i} className="bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+              <span key={i} className="flex-none whitespace-nowrap bg-gray-900 px-3 py-1 rounded-full border border-gray-800 snap-start">
                 {tag}
               </span>
             ))}

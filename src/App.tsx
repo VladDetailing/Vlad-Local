@@ -9,6 +9,8 @@ import DetailingExterior from './components/DetailingExterior';
 import SocialProof from './components/SocialProof';
 import FinalCTA from './components/FinalCTA';
 import SocialDock from './components/SocialDock';
+import ScrollTop from './components/ScrollTop';
+import AnpcBadge from './components/AnpcBadge';
 import WrappingPpf from './components/WrappingPpf';
 import FolieSolara from './components/FolieSolara';
 import PolishFaruri from './components/PolishFaruri';
@@ -461,7 +463,16 @@ function App() {
                 <Menu className="w-6 h-6" />
               </button>
               {logoUrl && (
-                <a href="#acasa" aria-label="Acasă">
+                <a
+                  href="#acasa"
+                  aria-label="Acasă"
+                  onClick={(e) => {
+                    if (currentPage === 'acasa') {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                >
                   <img
                     src={logoUrl}
                     alt="Vlad Detailing Logo"
@@ -599,6 +610,7 @@ function App() {
                           }}
                           className="block px-3 py-2 rounded-md text-sm text-gray-200 hover:text-blue-300 hover:bg-white/5 transition-colors uppercase tracking-wide"
                         >
+                          <span className="text-gray-500 mr-2">-</span>
                           {submenuItem.label}
                         </a>
                       </li>
@@ -637,9 +649,10 @@ function App() {
       </aside>
 
       {renderPage()}
+      <ScrollTop />
       <ChatbotWidget />
-      <footer className="py-8 px-6">
-        <div className="max-w-5xl mx-auto">
+      <footer className="py-8 px-0 relative">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base text-gray-300">
             <a href="#despre-noi" className="hover:text-blue-300 transition-colors">
               Despre Noi
@@ -656,6 +669,9 @@ function App() {
             <a href="#contact" className="hover:text-blue-300 transition-colors">
               Contact
             </a>
+          </div>
+          <div className="mt-4 md:mt-0 md:absolute md:left-3 md:bottom-3 pl-2">
+            <AnpcBadge />
           </div>
         </div>
       </footer>

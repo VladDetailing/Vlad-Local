@@ -31,7 +31,7 @@ export default function Retapitari() {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20"
         >
-          <div className="space-y-8">
+          <div className="space-y-8 order-1">
             <div className="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
               <h3 className="text-2xl font-bold mb-6">Transformă interiorul</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
@@ -45,20 +45,20 @@ export default function Retapitari() {
               </p>
             </div>
 
-            <div className="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
+            <div className="hidden lg:block bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
               <h3 className="text-2xl font-bold mb-6">Lucrări din atelier</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {(workshopImages.length > 0 ? workshopImages : Array.from({ length: 6 }, () => '')).map((src, index) =>
                   src ? (
                     <div
-                      key={src}
+                      key={`${src}-lg`}
                       className="relative aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
                     >
                       <img src={src} alt={`Lucrare retapițare ${index + 1}`} className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
                     </div>
                   ) : (
                     <div
-                      key={`placeholder-${index}`}
+                      key={`placeholder-lg-${index}`}
                       className="relative aspect-square bg-gray-900/30 rounded-xl border border-gray-800 border-dashed flex items-center justify-center"
                     >
                       <span className="text-gray-500 text-sm">Adaugă poză</span>
@@ -92,7 +92,7 @@ export default function Retapitari() {
             </div>
           </div>
 
-          <div className="h-full flex flex-col">
+          <div className="h-full flex flex-col order-2">
             <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-gray-800 relative overflow-hidden h-full flex flex-col">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <h3 className="text-2xl font-bold mb-8 text-center relative z-10">Lista de Prețuri</h3>
@@ -197,6 +197,54 @@ export default function Retapitari() {
 
             </div>
           </div>
+
+          <div className="order-3 lg:hidden">
+            <div className="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
+              <h3 className="text-2xl font-bold mb-6">Lucrări din atelier</h3>
+              <div className="flex gap-3 overflow-x-auto flex-nowrap -mx-6 px-6 snap-x snap-mandatory">
+                {(workshopImages.length > 0 ? workshopImages : Array.from({ length: 6 }, () => '')).map((src, index) =>
+                  src ? (
+                    <div
+                      key={src}
+                      className="relative flex-none w-40 aspect-square bg-gray-800 rounded-xl overflow-hidden border border-gray-700 snap-start"
+                    >
+                      <img src={src} alt={`Lucrare retapițare ${index + 1}`} className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
+                    </div>
+                  ) : (
+                    <div
+                      key={`placeholder-${index}`}
+                      className="relative flex-none w-40 aspect-square bg-gray-900/30 rounded-xl border border-gray-800 border-dashed flex items-center justify-center snap-start"
+                    >
+                      <span className="text-gray-500 text-sm">Adaugă poză</span>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <div className="mt-6">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-4 p-4 rounded-xl bg-blue-600/15 border border-blue-500/30">
+                    <div className="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <BadgeCheck className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white">Garanție pe lucrare</div>
+                      <div className="text-sm text-gray-300">1 an</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="bg-white/10 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Wrench className="w-5 h-5 text-blue-300" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white">Demontaj și montaj</div>
+                      <div className="text-sm text-gray-300">inclus</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="mt-20 p-10 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl border border-blue-500/20 text-center relative overflow-hidden">
@@ -226,7 +274,7 @@ export default function Retapitari() {
 
       <div className="mt-24 pt-12 border-t border-gray-900">
         <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-        <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-700">
+        <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
           {[
             'Retapițare plafon auto Galați',
             'Retapițare fețe uși',
@@ -239,7 +287,7 @@ export default function Retapitari() {
             'Atelier retapițări Galați',
             'Detailing interior Galați'
           ].map((tag, i) => (
-            <span key={i} className="bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+            <span key={i} className="flex-none whitespace-nowrap bg-gray-900 px-3 py-1 rounded-full border border-gray-800 snap-start">
               {tag}
             </span>
           ))}

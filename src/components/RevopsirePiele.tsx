@@ -1,7 +1,14 @@
 import { Palette, Shield, Armchair, CircleDashed, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const galleryImages = ['/Revopsire-piele/IMG_7015.webp', '/Revopsire-piele/IMG_7016.webp'];
+const galleryImages = [
+  '/Revopsire-piele/IMG_7013.webp',
+  '/Revopsire-piele/IMG_7014.webp',
+  '/Revopsire-piele/IMG_7015.webp',
+  '/Revopsire-piele/IMG_7016.webp',
+  '/Revopsire-piele/Revopsire1.webp',
+  '/Revopsire-piele/Revopsire2.webp'
+];
 const gallerySlots = [...galleryImages];
 
 export default function RevopsirePiele() {
@@ -171,12 +178,12 @@ export default function RevopsirePiele() {
             Rezultate <span className="text-amber-600">Înainte/După</span>
           </h2>
 
-          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="w-full flex overflow-x-auto flex-nowrap gap-4 -mx-6 px-6 snap-x snap-mandatory">
             {gallerySlots.map((src, index) =>
               src ? (
                 <div
                   key={src}
-                  className="relative aspect-[4/5] bg-gray-800 rounded-lg overflow-hidden border border-amber-500/30 shadow-lg shadow-amber-500/10"
+                  className="relative flex-none w-44 sm:w-52 md:w-60 aspect-[4/5] bg-gray-800 rounded-lg overflow-hidden border border-amber-500/30 shadow-lg shadow-amber-500/10 snap-start"
                 >
                   <img
                     src={src}
@@ -223,7 +230,7 @@ export default function RevopsirePiele() {
 
         <div className="mt-24 pt-12 border-t border-gray-900">
           <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-700">
+          <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
             {[
               'Revopsire piele auto Galați',
               'Recondiționare piele auto',
@@ -236,7 +243,7 @@ export default function RevopsirePiele() {
               'Detailing interior Galați',
               'Servicii piele auto premium'
             ].map((tag, i) => (
-              <span key={i} className="bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+              <span key={i} className="flex-none whitespace-nowrap bg-gray-900 px-3 py-1 rounded-full border border-gray-800 snap-start">
                 {tag}
               </span>
             ))}

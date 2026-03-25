@@ -1,4 +1,4 @@
-import { Sparkles, SprayCan, Shield } from 'lucide-react';
+import { Sparkles, Paintbrush, Shield } from 'lucide-react';
 import BeforeAfterSlider from './BeforeAfterSlider';
  
 
@@ -28,7 +28,7 @@ const services = [
     ]
   },
   {
-    icon: SprayCan,
+    icon: Paintbrush,
     title: 'Detailing Interior',
     items: [
       'Curățare și igienizare completă',
@@ -50,32 +50,37 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 to-black text-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-black text-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
             Servicii profesionale <span className="text-blue-400">complete</span>
           </h2>
           <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-blue-950/40 to-gray-900 p-8 rounded-2xl border border-blue-500/30 hover:border-blue-500 transition-all hover:transform hover:scale-105"
+              className="bg-gradient-to-br from-blue-950/40 to-gray-900 p-5 md:p-8 rounded-2xl border border-blue-500/30 hover:border-blue-500 transition-all hover:transform hover:scale-105"
             >
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <service.icon className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="bg-blue-600 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                  <service.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                </div>
+                <h3
+                  id={serviceTitleIds[service.title]}
+                  className={`text-lg md:text-2xl font-bold text-blue-400 ${service.title === 'Protecție & Personalizare' ? 'md:whitespace-nowrap' : ''}`}
+                >
+                  {service.title}
+                </h3>
               </div>
-              <h3 id={serviceTitleIds[service.title]} className="text-2xl font-bold mb-6 text-blue-400">
-                {service.title}
-              </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {service.items.map((item, idx) => (
-                  <li key={idx} id={serviceItemIds[item]} className="flex items-start gap-3">
+                  <li key={idx} id={serviceItemIds[item]} className="flex items-start gap-2 md:gap-3">
                     <span className="text-blue-400 mt-1">•</span>
-                    <span className="text-gray-300">{item}</span>
+                    <span className="text-gray-300 text-sm md:text-base leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -83,15 +88,15 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-3xl font-bold text-center mb-12">
+        <div className="mt-10 md:mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-12">
             Before & After
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="relative aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border-2 border-blue-500/30 group"
+                className="relative aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-blue-500/30 md:border-2 group"
               >
                 {i === 1 ? (
                   <BeforeAfterSlider

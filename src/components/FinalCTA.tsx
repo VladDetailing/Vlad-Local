@@ -312,38 +312,41 @@ export default function FinalCTA({ title, mode = 'full' }: FinalCTAProps) {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-5 rounded-xl border border-blue-500/30 text-center">
-                  <Phone className="w-9 h-9 text-blue-400 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">Telefon</h3>
-                  <a href="tel:+40771133128" className="text-blue-400 hover:text-blue-300 text-lg">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-8">
+                <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-3 md:p-5 rounded-xl border border-blue-500/30 text-center">
+                  <Phone className="w-6 h-6 md:w-9 md:h-9 text-blue-400 mx-auto mb-2 md:mb-3" />
+                  <h3 className="text-sm md:text-base font-semibold mb-1 md:mb-2">Telefon</h3>
+                  <a href="tel:+40771133128" className="text-blue-400 hover:text-blue-300 text-xs sm:text-sm md:text-lg whitespace-nowrap leading-none">
                     +40 771 133 128
                   </a>
                 </div>
 
-                <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-5 rounded-xl border border-blue-500/30 text-center">
-                  <MapPin className="w-9 h-9 text-blue-400 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">Locație</h3>
+                <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-3 md:p-5 rounded-xl border border-blue-500/30 text-center">
+                  <MapPin className="w-6 h-6 md:w-9 md:h-9 text-blue-400 mx-auto mb-2 md:mb-3" />
+                  <h3 className="text-sm md:text-base font-semibold mb-1 md:mb-2">Locație</h3>
                   <a
                     href="https://www.google.com/maps/dir//Vlad+Detailing+SRL,+Strada+Brăilei+253A,+Tirighina,+800402+Galați,+România/@45.6599795,12.2048719,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x40b6dfafd630bdb3:0x2eabe8f3210d0748!2m2!1d27.9829933!2d45.406798?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300"
+                    className="text-blue-400 hover:text-blue-300 text-sm md:text-base"
                   >
                     Galați, România
                   </a>
                 </div>
 
-                <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-5 rounded-xl border border-blue-500/30 text-center">
-                  <Clock className="w-9 h-9 text-blue-400 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">Program</h3>
-                  <div className="text-gray-300 text-sm grid grid-cols-[3.25rem_1fr] gap-x-2 gap-y-0.5 text-left w-fit mx-auto">
+                <div className="col-span-2 md:col-span-1 bg-gradient-to-br from-gray-900 to-blue-950/30 p-2 md:p-5 rounded-xl border border-blue-500/30 text-center min-w-0">
+                  <Clock className="w-6 h-6 md:w-9 md:h-9 text-blue-400 mx-auto mb-2 md:mb-3" />
+                  <h3 className="text-sm md:text-base font-semibold mb-1 md:mb-2">Program</h3>
+                  <div className="md:hidden text-gray-300 text-[clamp(10px,3vw,12px)] whitespace-nowrap leading-none">
+                    L-V: 8:30-12:30 <span className="text-gray-500">|</span> 13:30-17:30 <span className="inline-block w-3"></span> S: 08:30-12:00
+                  </div>
+                  <div className="hidden md:grid text-gray-300 md:text-sm grid-cols-[2.2rem_1fr] gap-x-2 gap-y-0.5 text-left mx-auto w-full">
                     <div className="font-semibold text-white">L-V:</div>
-                    <div className="text-center tabular-nums">08:30 - 12:30</div>
+                    <div className="text-center tabular-nums whitespace-nowrap leading-none">8:30-12:30</div>
                     <div />
-                    <div className="text-center tabular-nums">13:30 - 17:30</div>
+                    <div className="text-center tabular-nums whitespace-nowrap leading-none">13:30-17:30</div>
                     <div className="font-semibold text-white">S:</div>
-                    <div className="text-center tabular-nums">08:30 - 12:00</div>
+                    <div className="text-center tabular-nums whitespace-nowrap leading-none">08:30-12:00</div>
                   </div>
                 </div>
               </div>

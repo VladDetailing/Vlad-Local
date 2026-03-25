@@ -9,20 +9,20 @@ export default function SocialProof() {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const reviews = [...googleReviews].reverse();
   return (
-    <section className="py-24 bg-black text-white">
+    <section className="py-16 md:py-24 bg-black text-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Ce spun <span className="text-blue-400">clienții noștri</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-4 md:mb-6"></div>
 
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-1.5 md:gap-2 mb-3 md:mb-4">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
+              <Star key={i} className="w-6 h-6 md:w-8 md:h-8 fill-yellow-400 text-yellow-400" />
             ))}
           </div>
-          <p className="text-xl text-gray-400">{avg.toFixed(1)} stele pe Google</p>
+          <p className="text-base md:text-xl text-gray-400">{avg.toFixed(1)} stele pe Google</p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
@@ -35,27 +35,27 @@ export default function SocialProof() {
             <ChevronLeft className="w-5 h-5" />
           </button>
           <div ref={scrollerRef} className="relative z-0 overflow-x-auto scroll-smooth snap-x snap-mandatory">
-            <div className="flex flex-nowrap gap-4 py-2">
+            <div className="flex flex-nowrap gap-3 md:gap-4 py-1.5 md:py-2">
               {reviews.map((rev, index) => (
                 <div
                   key={index}
-                  className="flex-none w-72 md:w-80 bg-gradient-to-br from-blue-950/40 to-gray-900 p-6 rounded-2xl border border-blue-500/30 relative snap-start"
+                  className="flex-none w-64 md:w-80 bg-gradient-to-br from-blue-950/40 to-gray-900 p-4 md:p-6 rounded-2xl border border-blue-500/30 relative snap-start"
                 >
-                  <Quote className="absolute top-6 right-6 w-12 h-12 text-blue-500/20" />
+                  <Quote className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 text-blue-500/20" />
 
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-3 md:mb-4">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
 
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-300 mb-4 md:mb-6 leading-snug md:leading-relaxed text-sm md:text-base">
                     "{rev.text.trim().length ? rev.text : 'Recenzie fără text'}"
                   </p>
 
                   <div>
-                    <p className="font-semibold text-white">{rev.name}</p>
-                    {rev.date && <p className="text-sm text-blue-400">{rev.date}</p>}
+                    <p className="font-semibold text-white text-sm md:text-base">{rev.name}</p>
+                    {rev.date && <p className="text-xs md:text-sm text-blue-400">{rev.date}</p>}
                   </div>
                 </div>
               ))}
@@ -71,39 +71,39 @@ export default function SocialProof() {
           </button>
         </div>
 
-        <div className="mt-16">
-          <div className="bg-gradient-to-r from-blue-950/60 to-gray-900 px-8 py-8 rounded-2xl border border-blue-500/30">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-10 md:mt-16">
+          <div className="bg-gradient-to-r from-blue-950/60 to-gray-900 p-6 md:px-8 md:py-8 rounded-2xl border border-blue-500/30">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="flex items-center gap-3">
-                <Star className="w-7 h-7 fill-yellow-400 text-yellow-400" />
+                <Star className="w-6 h-6 md:w-7 md:h-7 fill-yellow-400 text-yellow-400" />
                 <div>
-                  <p className="text-white font-semibold">5.0 pe Google</p>
-                  <p className="text-gray-400 text-sm">Rating mediu</p>
+                  <p className="text-white font-semibold text-sm md:text-base">5.0 pe Google</p>
+                  <p className="text-gray-400 text-xs md:text-sm">Rating mediu</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <BadgeCheck className="w-7 h-7 text-blue-400" />
+                <BadgeCheck className="w-6 h-6 md:w-7 md:h-7 text-blue-400" />
                 <div>
-                  <p className="text-white font-semibold">Recenzii verificate</p>
-                  <p className="text-gray-400 text-sm">Clienți reali</p>
+                  <p className="text-white font-semibold text-sm md:text-base">Recenzii verificate</p>
+                  <p className="text-gray-400 text-xs md:text-sm">Clienți reali</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Users className="w-7 h-7 text-blue-400" />
+                <Users className="w-6 h-6 md:w-7 md:h-7 text-blue-400" />
                 <div>
-                  <p className="text-white font-semibold">100+ clienți</p>
-                  <p className="text-gray-400 text-sm">Mulțumiți</p>
+                  <p className="text-white font-semibold text-sm md:text-base">100+ clienți</p>
+                  <p className="text-gray-400 text-xs md:text-sm">Mulțumiți</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <ShieldCheck className="w-7 h-7 text-blue-400" />
+                <ShieldCheck className="w-6 h-6 md:w-7 md:h-7 text-blue-400" />
                 <div>
-                  <p className="text-white font-semibold">Garanție lucrări</p>
-                  <p className="text-gray-400 text-sm">Calitate premium</p>
+                  <p className="text-white font-semibold text-sm md:text-base">Garanție lucrări</p>
+                  <p className="text-gray-400 text-xs md:text-sm">Calitate premium</p>
                 </div>
               </div>
             </div>
-            <div className="mt-6 text-center">
+            <div className="mt-4 md:mt-6 text-center">
               <a
                 href="https://share.google/o2F2dAJmtjl9Auvjd"
                 target="_blank"

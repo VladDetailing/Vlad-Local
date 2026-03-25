@@ -126,12 +126,12 @@ export default function DetailingInterior() {
             Exemple de <span className="text-blue-500">curățare</span>
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-6 overflow-x-auto md:overflow-visible flex-nowrap md:flex-none gap-3 md:gap-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory">
             {exampleImages.map((src, index) => (
               <div 
                 key={index}
                 onClick={() => setSelectedImage(src)}
-                className="aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative"
+                className="flex-none w-40 md:w-auto aspect-square bg-gray-900/50 rounded-xl border border-gray-800 flex items-center justify-center group hover:border-blue-500/50 transition-colors cursor-pointer overflow-hidden relative snap-start"
               >
                 <OptimizedImg
                   src={src}
@@ -139,7 +139,7 @@ export default function DetailingInterior() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  sizes="(max-width: 640px) 40vw, (max-width: 1024px) 33vw, 16vw"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
               </div>
@@ -174,7 +174,7 @@ export default function DetailingInterior() {
 
       <div className="mt-24 pt-12 border-t border-gray-900">
         <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-        <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-700">
+        <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
           {[
             'Detailing interior Galați',
             'Curățare interior auto Galați',
@@ -187,7 +187,7 @@ export default function DetailingInterior() {
             'Protecție ceramică piele',
             'Curățare mochetă auto'
           ].map((tag, i) => (
-            <span key={i} className="bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+            <span key={i} className="flex-none whitespace-nowrap bg-gray-900 px-3 py-1 rounded-full border border-gray-800 snap-start">
               {tag}
             </span>
           ))}

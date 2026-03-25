@@ -242,13 +242,13 @@ export default function FolieSolara() {
         {/* SEO Keywords */}
         <div className="mt-24 pt-12 border-t border-gray-900">
           <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-700">
+          <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
             {[
               'Folie auto Galați', 'Folie omologată RAR', 'Folie Global Galați',
               'Montaj folie auto', 'Folie geamuri spate', 'Folie geamuri față', 'Folie parbriz',
               'Folie protecție solară', 'Folie auto fără demontare'
             ].map((tag, i) => (
-              <span key={i} className="bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+              <span key={i} className="flex-none whitespace-nowrap bg-gray-900 px-3 py-1 rounded-full border border-gray-800 snap-start">
                 {tag}
               </span>
             ))}
