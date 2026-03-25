@@ -19,6 +19,7 @@ import TermsConditionsPage from './components/TermsConditionsPage';
 import ChatbotWidget from './components/ChatbotWidget';
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 type PageKey =
   | 'acasa'
@@ -638,6 +639,7 @@ function App() {
 
       {renderPage()}
       <ChatbotWidget />
+      <Analytics />
       <footer className="py-8 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base text-gray-300">
