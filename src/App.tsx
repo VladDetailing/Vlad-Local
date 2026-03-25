@@ -19,6 +19,7 @@ import TermsConditionsPage from './components/TermsConditionsPage';
 import ChatbotWidget from './components/ChatbotWidget';
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 type PageKey =
   | 'acasa'
@@ -659,6 +660,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
