@@ -14,7 +14,7 @@ export type DetailingPackage = {
 
 export const detailingExteriorExampleImages: string[] = [
   '/Polish/IMG_7122.webp',
-  '/Polish/IMG_7119.webp',
+  '/Polish/IMG_7199.webp',
   '/Polish/IMG_7121.webp',
   '/Polish/IMG_7117.webp',
   '/Polish/IMG_7123.webp',

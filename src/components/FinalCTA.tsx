@@ -337,13 +337,13 @@ export default function FinalCTA({ title, mode = 'full' }: FinalCTAProps) {
                 <div className="bg-gradient-to-br from-gray-900 to-blue-950/30 p-5 rounded-xl border border-blue-500/30 text-center">
                   <Clock className="w-9 h-9 text-blue-400 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Program</h3>
-                  <div className="text-gray-300 text-sm grid grid-cols-[3.25rem_1fr] gap-x-2 gap-y-0.5 text-left mx-auto max-w-[15rem]">
+                  <div className="text-gray-300 text-sm grid grid-cols-[3.25rem_1fr] gap-x-2 gap-y-0.5 text-left w-fit mx-auto">
                     <div className="font-semibold text-white">L-V:</div>
-                    <div>08:30 - 12:30</div>
+                    <div className="text-center tabular-nums">08:30 - 12:30</div>
                     <div />
-                    <div>13:30 - 17:30</div>
+                    <div className="text-center tabular-nums">13:30 - 17:30</div>
                     <div className="font-semibold text-white">S:</div>
-                    <div>08:30 - 12:00</div>
+                    <div className="text-center tabular-nums">08:30 - 12:00</div>
                   </div>
                 </div>
               </div>

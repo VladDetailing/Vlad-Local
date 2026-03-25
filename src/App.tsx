@@ -461,11 +461,13 @@ function App() {
                 <Menu className="w-6 h-6" />
               </button>
               {logoUrl && (
-                <img
-                  src={logoUrl}
-                  alt="Vlad Detailing Logo"
-                  className="h-14 md:h-[5.5rem] w-auto object-contain max-w-[42vw]"
-                />
+                <a href="#acasa" aria-label="Acasă">
+                  <img
+                    src={logoUrl}
+                    alt="Vlad Detailing Logo"
+                    className="h-14 md:h-[5.5rem] w-auto object-contain max-w-[42vw]"
+                  />
+                </a>
               )}
             </div>
             <nav className="hidden md:block">
