@@ -339,7 +339,7 @@ export default function WrappingPpf() {
         {/* SEO Keywords (Hidden visually but present in DOM structure if needed, or displayed discreetly) */}
         <div className="mt-24 pt-12 border-t border-gray-900">
           <p className="text-sm text-gray-600 text-center mb-4">Servicii disponibile:</p>
-          <div className="flex flex-nowrap overflow-x-auto gap-3 text-xs text-gray-700 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
+          <div className="flex flex-nowrap overflow-x-auto overscroll-x-contain gap-3 text-xs text-gray-700 w-full max-w-full snap-x">
             {[
               'Colantare auto Galați', 'Folie protecție PPF Galați', 'Înfoliere auto Galați',
               'Protecție vopsea auto', 'Colantare mașină', 'Folie protecție caroserie',

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    overflow-x: clip;
+    width: 100%;
+  }
+
   @media (max-width: 480px) {
     html {
       font-size: clamp(14px, 3.8vw, 16px);
