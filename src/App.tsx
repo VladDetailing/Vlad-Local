@@ -11,6 +11,7 @@ import FinalCTA from './components/FinalCTA';
 import SocialDock from './components/SocialDock';
 import ScrollTop from './components/ScrollTop';
 import AnpcBadge from './components/AnpcBadge';
+import DiscountPopup from './components/DiscountPopup';
 import WrappingPpf from './components/WrappingPpf';
 import FolieSolara from './components/FolieSolara';
 import PolishFaruri from './components/PolishFaruri';
@@ -649,6 +650,7 @@ function App() {
       </aside>
 
       {renderPage()}
+      <DiscountPopup />
       <ScrollTop />
       <ChatbotWidget />
       <footer className="py-8 px-0 relative">
